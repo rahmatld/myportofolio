@@ -90,8 +90,13 @@ a {
   width: fit-content;
   font-weight: 400;
   font-size: 0.9rem;
-  top: 30%;
+  top: 50%;
+  transform: translateY(-50%); /* Menengahkan vertikal */
+  margin: 0 auto; /* Menengahkan horizontal */
+  display: flex; /* Menambahkan flex display */
+  align-items: center; /* Menengahkan vertikal dengan flexbox */
 }
+
 .pre-title::before {
   content: ""; /* Add a value for the content property */
   width: 30px;
