@@ -127,7 +127,6 @@ a {
 }
 
 .logo {
-  padding top : 2rem;
   display: flex;
   align-items: center;
   font-weight: 700;
@@ -185,6 +184,7 @@ nav ul li a {
 
 .hero-right img {
   width: 70%;
+  padding-top: 2.5rem;
 }
 .hero-right {
   display: flex;
@@ -216,6 +216,7 @@ nav ul li a {
 /* portofolio section ============================================*/
 #portofolio {
   padding: var(--sectionPadding);
+  background: var(--thirdBackgroundColor);
 }
 
 .portofolio {
@@ -272,6 +273,7 @@ nav ul li a {
 /* contact =======================================================*/
 #contact {
   padding: var(--sectionPadding);
+  background: var(--secondaryBackgroundColor);
 }
 
 .contact {
