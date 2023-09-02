@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
-
 :root {
   --primaryTextColor: #232e35;
   --secondaryTextColor: #656d72;
@@ -14,375 +12,97 @@
   --itemBorderRadius: 0.7rem;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong {
-  color: var(--primaryTextColor);
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.9rem;
-}
-
-p,
-span,
-label,
-input,
-textarea,
-li {
-  color: var(--secondaryTextColor);
-}
-
-a {
-  text-decoration: none;
-}
-
-.main-container {
-  width: 1200px; /* Menggunakan max-width agar konten responsif */
-  margin: 0 auto;
-}
-
-@media screen and (max-width: 1200px) {
-  .main-container {
-    width: 90%;
+@media screen and (max-width: 1000px) {
+  p {
+    font-size: 0.9rem;
+    line-height: 2.4rem;
+  }
+  .grid-3 {
+    gap: 1rem;
   }
 }
+@media screen and (max-width: 825px) {
+  /* burger */
+  .burger {
+    display: block;
+    cursor: pointer;
+    /* Tambahkan padding dan margin jika diperlukan */
+    padding: 10px;
+    margin: 10px;
+  }
+  .toggle-burger .line-1 {
+    transform: rotate(-45deg) translate(-5px, 7px);
+  }
 
-/* button menu */
-.btn {
-  padding: 1rem 1.5rem;
-  background: white;
-  border: 1.5px solid var(--borderColor);
-  cursor: pointer;
-  transition: 0.2s ease-in-out; /* Memindahkan "ease-in-out" ke dalam properti "transition" */
-}
+  .toggle-burger .line-2 {
+    opacity: 0;
+  }
 
-.btn:hover {
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.04); /* Menambahkan nilai horizontal dan vertikal untuk bayangan */
-}
-/* title */
-.section-title {
-  margin: 1 rem 0 4rem;
-  font-size: 2rem;
-}
+  .toggle-burger .line-3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
 
-.pre-title {
-  text-transform: uppercase;
-  letter-spacing: 0.5rem;
-  color: var(--secondaryTextColor);
-  position: relative;
-  padding-left: 40px;
-  width: fit-content;
-  font-weight: 400;
-  font-size: 0.9rem;
-  top: 50%;
-  transform: translateY(-50%); /* Menengahkan vertikal */
-  margin: 0 auto; /* Menengahkan horizontal */
-  display: flex; /* Menambahkan flex display */
-  align-items: center; /* Menengahkan vertikal dengan flexbox */
-}
+  /* navigation */
+  nav {
+    position: fixed;
+    width: 50%;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    flex-direction: column;
+    background: var(--primaryBackgroundColor);
+    border-left: 1px solid var(--borderColor);
+    z-index: 9;
+    transform: translateX(100%);
+    transition: transform 0.3s ease; /* Tambahkan transisi */
+  }
+  nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.pre-title::before {
-  content: ""; /* Add a value for the content property */
-  width: 30px;
-  height: 0.5px;
-  background: var(--lineColor);
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 50%;
-}
+  .nav-active {
+    transform: translateX(0);
+  }
 
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-}
-/* logo and navigation menu */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 2rem;
-}
+  /* hero sectio */
 
-.nav ul {
-  list-style: none;
-  display: flex;
-  gap: 3rem;
-}
+  #hero {
+    grid-template-columns: 1fr;
+    height: fit-content;
+  }
 
-.logo {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-  font-size: 2rem;
-}
+  .hero-right {
+    order: -1;
+  }
 
-.logo a {
-  color: var(--primaryTextColor);
-}
+  .hero-right img {
+    width: 70%;
+  }
 
-nav ul li {
-  display: flex;
-  align-items: center;
-}
+  .hero-left {
+    text-align: center;
+    padding-bottom: 5rem;
+  }
 
-nav ul li a {
-  color: var(--primaryTextColor);
-}
+  .hero-left .pre-title {
+    margin: 0 auto;
+    padding-top: 1rem;
+  }
 
-/* burger */
-.burger div {
-  width: 25px;
-  height: 2px;
-  background-color: #000;
-  margin: 7px;
-  transition: all 0.3s;
-  z-index: 99;
-}
+  .hero-name {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+  }
 
-.burger {
-  display: none;
-  z-index: 99;
-  position: fixed;
-  top: 33px;
-  right: 35px;
+  .social-media {
+    font-size: 15px;
+    margin: 0 10px;
+    padding-top: 0.5rem;
+  }
 }
-
-#hero {
-  height: 720px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  margin-top: -12%;
-}
-
-.hero-name {
-  font-size: 3rem;
-  font-weight: 700;
-  margin: 0.5rem 0 1rem;
-}
-
-.hero-name span {
-  color: var(--primaryIconColor);
-}
-
-.hero-right img {
-  width: 70%;
-  padding-top: 2.5rem;
-}
-.hero-right {
-  display: flex;
-  justify-content: center;
-}
-
-.social-media a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  height: auto;
-  background: transparent;
-  border: 0.2rem solid var(--primaryIconColor);
-  border-radius: 50%;
-  font-size: 2rem;
-  color: var(--primaryIconColor);
-  margin: 1rem 0.5rem;
-  transition: 0.5s ease;
-  margin-top: 1rem;
-}
-
-.social-media a:hover {
-  background: var(--primaryIconColorHover);
-  color: var(--lineColor);
-  box-shadow: 0 0 1rem var(--main-color);
-}
-
-/* portofolio section ============================================*/
-#portofolio {
-  padding: var(--sectionPadding);
-}
-
-.portofolio {
-  border-radius: var(--itemBorderRadius);
-  overflow: hidden;
-  border: 1px solid var(--borderColor);
-}
-
-.portofolio-cover {
-  height: 250px;
-}
-
-.portofolio-cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.portofolio-info {
-  padding: 2rem 1.5rem;
-}
-
-.portofolio-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-.portofolio h4 {
-  font-weight: 500;
-  font-size: 1.05rem;
-}
-
-.portofolio-title a svg:hover {
-  fill: var(--primaryIconColor);
-}
-.portofolio-title a svg:hover {
-  transition: 0.2s ease-in-out;
-}
-
-.portofolio-tags {
-  display: flex;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.portofolio-tags div {
-  font-size: 0.9rem;
-  border: 1px solid var(--borderColor);
-  padding: 0.4rem 1rem;
-  color: var(--secondaryTextColor);
-}
-
-/* contact =======================================================*/
-#contact {
-  padding: var(--sectionPadding);
-}
-
-.contact {
-  display: grid; /* Menggunakan "grid" sebagai tata letak */
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
-}
-
-.contact-form div {
-  margin-bottom: 1.4rem; /* Menggunakan titik desimal, bukan koma */
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem 1.3rem; /* Menggunakan titik desimal, bukan garis miring terbalik */
-  font-family: "Roboto", sans-serif; /* Menggunakan tanda kutip ganda di "Roboto" */
-  background: var(--secondaryBackgroundColor);
-  border: 1px solid var(--borderColor); /* Menambahkan "solid" untuk jenis border */
-  border-radius: 3px;
-  resize: none;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #9d9fa1;
-}
-
-.contact-form input :focus,
-.contact-form textarea:focus {
-  outline: none;
-  border: 1px solid #7d7d7d;
-}
-.btn-submit {
-  width: 100%;
-  padding: 0.75rem 1.3rem;
-  background-color: var(--primaryIconColor);
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: 0.2s; /* Perbaikan: Nilai 'o.2s' diganti menjadi '0.2s' */
-}
-
-.btn-submit:hover {
-  /* Perbaikan: Menghapus spasi di antara .btn-submit dan :hover */
-  background: var(--primaryIconColorHover);
-}
-
-.contact-item-icon {
-  background: var(--thirdBackgroundColor);
-  width: 53px;
-  height: 53px;
-  border-radius: 9px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.contact-item-icon svg {
-  fill: var(--primaryIconColor);
-}
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.contact-item-content {
-  display: flex;
-  align-items: center;
-}
-
-.contact-item-detail {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-item-detail h4 {
-  margin: 0 0.5rem 0 0;
-  font-size: 1rem;
-}
-
-.contact-item-detail p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-/* fother ============================================= */
-.footer {
-  background: var(--secondaryBackgroundColor);
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.footer-text p {
-  margin: 0;
-}
-
-.footer-iconTop {
-  margin-top: 1rem;
-}
-
-.footer-iconTop a {
-  color: var(--primaryIconColor); /* Note the use of var() function */
-  text-decoration: none;
-  font-size: 2rem;
-}
-
-.footer-iconTop a:hover {
-  color: var(
-    --primaryIconColorHover
-  ); /* Assuming you have defined the main color variable */
+@media screen and (max-width: 640px) {
 }
